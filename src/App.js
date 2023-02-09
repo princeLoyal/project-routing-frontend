@@ -4,6 +4,7 @@ import EventDetailPage from './pages/EventDetailPage';
 import NewEventPage from './pages/NewEventPage';
 import EditEventPage from './pages/EditEventPage';
 import Root from './components/RootLayout';
+import EventsNavigation from './components/EventsNavigation'
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 // Challenge / Exercise
@@ -34,10 +35,16 @@ const router = createBrowserRouter([
     element: <Root />, 
     children: [
         {path: '/', element: <HomePage />},
-        {path: '/events', element: <EventsPage />},
-        {path: '/events/:eventId', element: <EventDetailPage />},
-        {path: '/events/new', element: <NewEventPage />},
-        {path: '/events/:eventId/edit', element: <EditEventPage />}
+        {
+          path: '/events', 
+          element: <EventsNavigation />,
+          children: [
+            {path: '/events', element: <EventsPage />},
+            {path: '/events/:eventId', element: <EventDetailPage />},
+            {path: '/events/new', element: <NewEventPage />},
+            {path: '/events/:eventId/edit', element: <EditEventPage />}
+          ]
+        },
     ]
   },
 ]);
