@@ -1,7 +1,9 @@
 import classes from './EventsNavigation.module.css';
+import { Outlet } from 'react-router-dom';
 
 function EventsNavigation() {
   return (
+    <>
     <header className={classes.header}>
       <nav>
         <ul className={classes.list}>
@@ -14,6 +16,9 @@ function EventsNavigation() {
         </ul>
       </nav>
     </header>
+
+    <Outlet />
+    </>
   );
 }
 
