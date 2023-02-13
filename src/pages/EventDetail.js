@@ -35,16 +35,15 @@ async function loadEvent(id) {
   const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
 
   if (!response.ok) {
-    //throw json(
-    //  { message: 'Could not fetch details for selected event.' },
-     // {
-     //   status: 500,
-      //}
-   // );
-    return;
+    throw json(
+      { message: 'Could not fetch details for selected event.' },
+      {
+        status: 500,
+      }
+    );
   } else {
     const resData = await response.json();
-    return resData.event;
+    return resData[0];
   }
 }
 
