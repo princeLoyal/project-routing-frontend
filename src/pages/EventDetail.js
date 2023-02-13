@@ -73,4 +73,5 @@ export async function action({ params, request }) {
     );
   }
   return redirect('/events');
+
 }
