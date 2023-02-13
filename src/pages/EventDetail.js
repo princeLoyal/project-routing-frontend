@@ -11,7 +11,7 @@ import EventItem from '../components/EventItem';
 import EventsList from '../components/EventsList';
 
 function EventDetailPage() {
-  const { events } = useRouteLoaderData('event-detail');
+  const events  = useRouteLoaderData('event-detail');
 
   return (
     <>
