@@ -9,6 +9,7 @@ import EventDetailPage, {
   action as deleteEventAction,
 } from './pages/EventDetail';
 import EditEventPage from './pages/EditEvent';
+import NewEventPage from './pages/NewEvent';
 
 const router = createBrowserRouter([
  {
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
         // action: manipulateEventAction,
         },
      ],
+    },
+    {
+     path: 'new',
+     element: <NewEventPage />,
+     action: manipulateEventAction,
     },
   ],
  },
