@@ -18,13 +18,9 @@ function EventsPage() {
 export default EventsPage;
 
 async function loadEvents() {
-  const response = await fetch('http://localhost:8080/events');
+  const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events');
 
   if (!response.ok) {
-    // return { isError: true, message: 'Could not fetch events.' };
-    // throw new Response(JSON.stringify({ message: 'Could not fetch events.' }), {
-    //   status: 500,
-    // });
     throw json(
       { message: 'Could not fetch events.' },
       {
@@ -33,7 +29,7 @@ async function loadEvents() {
     );
   } else {
     const resData = await response.json();
-    return resData.events;
+    return resData;
   }
 }
 
