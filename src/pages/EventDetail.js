@@ -11,7 +11,7 @@ import EventItem from '../components/EventItem';
 import EventsList from '../components/EventsList';
 
 function EventDetailPage() {
-  const { events } = useRouteLoaderData('event-detail');
+  const { event, events } = useRouteLoaderData('event-detail');
 
   return (
     <>
@@ -31,7 +31,21 @@ function EventDetailPage() {
 
 export default EventDetailPage;
 
+async function loadEvent(id) {
+  const response = await fetch('http://localhost:8080/events/' + id);
 
+  if (!response.ok) {
+    throw json(
+      { message: 'Could not fetch details for selected event.' },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    const resData = await response.json();
+    return resData.event;
+  }
+}
 
 async function loadEvents() {
   const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
@@ -53,7 +67,24 @@ export async function loader({ request, params }) {
   const id = params.eventId;
 
   return defer({
-    //event: await loadEvent(id),
+    event: await loadEvent(id),
     events: loadEvents(),
   });
+}
+
+export async function action({ params, request }) {
+  const eventId = params.eventId;
+  const response = await fetch('http://localhost:8080/events/' + eventId, {
+    method: request.method,
+  });
+
+  if (!response.ok) {
+    throw json(
+      { message: 'Could not delete event.' },
+      {
+        status: 500,
+      }
+    );
+  }
+  return redirect('/events');
 }
