@@ -13,7 +13,7 @@ const router = createBrowserRouter([
  {
   path: '/',
   element: <RootLayout />,
- // errorElement: <ErrorPage />,
+  errorElement: <ErrorPage />,
   children: [
    { index: true, element: <HomePage /> },
    { 
@@ -27,11 +27,6 @@ const router = createBrowserRouter([
       },
       { path: ':eventId', element: <EventDetailPage />},
      ],
-    },
-    {
-     path: 'new',
-     element: <NewEventPage />,
-     action: manipulateEventAction,
     },
   ],
  },
