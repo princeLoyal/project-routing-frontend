@@ -41,6 +41,7 @@ async function loadEvent(id) {
      //   status: 500,
       //}
    // );
+    return;
   } else {
     const resData = await response.json();
     return resData.event;
