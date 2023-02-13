@@ -48,7 +48,7 @@ async function loadEvent(id) {
 }
 
 async function loadEvents() {
-  const response = await fetch('http://localhost:8080/events');
+  const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
 
   if (!response.ok) {
     // return { isError: true, message: 'Could not fetch events.' };
