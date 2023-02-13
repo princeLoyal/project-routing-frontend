@@ -19,7 +19,7 @@ export default EventsPage;
 
 async function loadEvents() {
 alert('yyg')
-  const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events');
+  const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
   alert('gggg')
   if (!response.ok) {
     throw json(
