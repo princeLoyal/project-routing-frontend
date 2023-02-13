@@ -28,7 +28,6 @@ async function loadEvents() {
     );
   } else {
     const resData = await response.json();
-alert(resData[0].url)
     return resData;
   }
 }
