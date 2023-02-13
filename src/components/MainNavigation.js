@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import classes from './MainNavigation.module.css';
-//import NewsletterSignup from './NewsletterSignup';
+import NewsletterSignup from './NewsletterSignup';
 
 function MainNavigation() {
   return (
@@ -41,6 +41,7 @@ function MainNavigation() {
           </li>
         </ul>
       </nav>
+      <NewsletterSignup />
     </header>
   );
 }
