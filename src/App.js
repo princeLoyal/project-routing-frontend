@@ -8,12 +8,13 @@ import EventDetailPage, {
   loader as eventDetailLoader,
   action as deleteEventAction,
 } from './pages/EventDetail';
+import NewEventPage from './pages/NewEvent';
 
 const router = createBrowserRouter([
  {
   path: '/',
   element: <RootLayout />,
-  errorElement: <ErrorPage />,
+//  errorElement: <ErrorPage />,
   children: [
    { index: true, element: <HomePage /> },
    { 
