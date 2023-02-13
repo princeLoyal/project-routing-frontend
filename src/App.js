@@ -12,7 +12,7 @@ const router = createBrowserRouter([
    { index: true, element: <HomePage /> },
    { 
      path: 'events',
-     element: <EventsPage />,
+     element: <EventsRootLayout />,
     },
   ],
  },
