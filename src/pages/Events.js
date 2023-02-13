@@ -21,6 +21,7 @@ async function loadEvents() {
   const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events');
 
   if (!response.ok) {
+alert('hshs')
     throw json(
       { message: 'Could not fetch events.' },
       {
