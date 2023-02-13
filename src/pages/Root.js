@@ -1,6 +1,11 @@
+import { Outlet, useNavigation } from 'react-router-dom';
+import MainNavigation from '../components/MainNavigation';
+
 function RootLayout() {
  return (
-    <div>Hello</div>
+    <>
+<MainNavigation />
+    </>
 );
 }
 export default RootLayout;
