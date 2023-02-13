@@ -11,7 +11,7 @@ import EventItem from '../components/EventItem';
 import EventsList from '../components/EventsList';
 
 function EventDetailPage() {
-  const events  = useRouteLoaderData('event-detail');
+  const { events } = useRouteLoaderData('event-detail');
 
   return (
     <>
@@ -67,7 +67,7 @@ export async function loader({ request, params }) {
   const id = params.eventId;
 
   return defer({
-    event: await loadEvent(id),
+    //event: await loadEvent(id),
     events: loadEvents(),
   });
 }
