@@ -8,8 +8,6 @@ import EventDetailPage, {
   loader as eventDetailLoader,
   action as deleteEventAction,
 } from './pages/EventDetail';
-import EditEventPage from './pages/EditEvent';
-import NewEventPage from './pages/NewEvent';
 
 const router = createBrowserRouter([
  {
@@ -27,21 +25,7 @@ const router = createBrowserRouter([
        element: <EventsPage/>,
        loader: eventsLoader, 
       },
-      {
-       path: ':eventId',
-       id: 'event-detail',
-       loader: eventDetailLoader,
-       children: [
-        {
-         index: true,
-         element: <EventDetailPage />,
-        // action: deleteEventAction,
-        },
-        {
-         path: 'edit',
-         element: <EditEventPage />,
-        // action: manipulateEventAction,
-        },
+      { path: ':eventId', element: <EventDetailPage />},
      ],
     },
     {
@@ -58,4 +42,3 @@ function App() {
 }
 
 export default App;
-
