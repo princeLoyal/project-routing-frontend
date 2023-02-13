@@ -4,7 +4,7 @@ import RootLayout from './pages/Root';
 
 const router = createBrowserRouter([
  {
-  path: '/'
+  path: '/',
   element: <RootLayout />,
   children: [
    { index: true, element: <HomePage /> },
