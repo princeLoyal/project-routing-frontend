@@ -4,7 +4,7 @@ import MainNavigation from '../components/MainNavigation';
 function RootLayout() {
  return (
     <>
-<MainNavigation />
+<Outlet />
     </>
 );
 }
