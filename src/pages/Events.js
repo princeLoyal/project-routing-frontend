@@ -18,9 +18,8 @@ function EventsPage() {
 export default EventsPage;
 
 async function loadEvents() {
-alert('bhvg')
   const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events');
-
+  alert('gggg')
   if (!response.ok) {
     throw json(
       { message: 'Could not fetch events.' },
