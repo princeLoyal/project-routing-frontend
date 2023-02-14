@@ -31,7 +31,7 @@ async function loadEvents() {
     const data = await response.json();
     for(const key in data){
       const event = {
-title: data[key].title,
+title: data[key][0].title,
 image: data[key].image, 
 id: data[key].id, 
 description: data[key].description, 
