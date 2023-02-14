@@ -87,13 +87,13 @@ export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
 
-  const eventData = [{
+  const eventData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
     description: data.get('description'),
     id:3,
-  }];
+  };
 
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
 
