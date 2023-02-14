@@ -43,6 +43,7 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
+alert(resData.image)
     return resData;
   }
 }
