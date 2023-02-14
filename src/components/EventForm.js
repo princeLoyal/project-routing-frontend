@@ -97,7 +97,7 @@ export async function action({ request, params }) {
 
   let url = 'http://localhost:8080/events';
 
-  if (method === 'PATCH') {
+  if (method === 'patch') {
     const eventId = params.eventId;
     url = 'http://localhost:8080/events/' + eventId;
   }
