@@ -55,7 +55,7 @@ async function loadEvent(id) {
     const resData = await response.json();
     return resData;
   }
-
+}
 async function loadEvents() {
   const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
 
