@@ -27,8 +27,11 @@ async function loadEvents() {
       }
     );
   } else {
-    const resData = await response.json();
-    return resData;
+    const data = await response.json();
+    for(const key in data){
+      alert(data[key].title)
+      return data[key];
+    }
   }
 }
 
