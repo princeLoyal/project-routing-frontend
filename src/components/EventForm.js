@@ -99,7 +99,7 @@ export async function action({ request, params }) {
 
   if (method === 'PUT') {
     const eventId = params.eventId;
-    const res = await fetch(url);
+    const res = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
     const resData = await res.json();
     for(const key in resData){
       if(resData[key].id === eventId){
