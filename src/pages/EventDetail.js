@@ -37,8 +37,8 @@ async function loadEvent(id) {
   const respData = await resp.json();
   for(const key in respData){
     if(respData[key].id === id){
-      url = key:
-alert(url)
+alert(typeof key)     
+alert(key)
     }
   }
   const response = await fetch(url);
