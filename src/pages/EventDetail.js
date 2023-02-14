@@ -35,11 +35,11 @@ async function loadEvent(id) {
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
   const resp = await fetch(url);
   const respData = await resp.json();
-  for(const key in respData){
-    if(respData[key].id === id){
-      url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events' +key+ '.json':
-    }
-  }
+  //for(const key in respData){
+    //if(respData[key].id === id){
+    //  url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events' +key+ '.json':
+    //}
+ // }
   const response = await fetch(url);
 
   if (!response.ok) {
