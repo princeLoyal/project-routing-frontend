@@ -92,7 +92,6 @@ export async function action({ request, params }) {
     image: data.get('image'),
     date: data.get('date'),
     description: data.get('description'),
-    id:3,
   };
 
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
