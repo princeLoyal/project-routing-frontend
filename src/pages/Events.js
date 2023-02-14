@@ -27,11 +27,19 @@ async function loadEvents() {
       }
     );
   } else {
+    const loadedEvents = [];
     const data = await response.json();
     for(const key in data){
-      alert(data[key].title)
-      return data[key];
+      const event = {
+title: data[key].title,
+image: data[key].image, 
+id: data[key].id, 
+description: data[key].description, 
+date: data[key].date, 
+      };
+loadedEvents.unshift(event);
     }
+return loadEvents;
   }
 }
 
