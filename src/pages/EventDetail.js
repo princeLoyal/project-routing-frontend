@@ -43,7 +43,12 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData;
+    return {
+title: 'hshd', 
+date: 'suudud',
+image: 'hshdj',
+description: 'hdhdh', 
+};
   }
 }
 
@@ -58,8 +63,19 @@ async function loadEvents() {
       }
     );
   } else {
-    const resData = await response.json();
-    return resData;
+    const loadedEvents = [];
+    const data = await response.json();
+    for(const key in data){
+      const event = {
+       title: data[key].title,
+       image: data[key].image, 
+       id: data[key].id, 
+       description: data[key].description, 
+       date: data[key].date, 
+      };
+     loadedEvents.unshift(event);
+    }
+    return loadedEvents;
   }
 }
 
