@@ -39,7 +39,7 @@ date: data[key].date,
       };
 loadedEvents.unshift(event);
     }
-return loadEvents;
+return loadedEvents;
   }
 }
 
