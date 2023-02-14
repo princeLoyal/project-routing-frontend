@@ -57,7 +57,7 @@ alert(event.description)
           type="date"
           name="date"
           required
-          defaultValue='24/14/2013'
+          defaultValue={ event ? event.date : ''}
         />
       </p>
       <p>
