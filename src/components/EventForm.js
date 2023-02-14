@@ -10,7 +10,7 @@ import {
 import classes from './EventForm.module.css';
 
 function EventForm({ method, event }) {
-alert(event.date)
+alert(event.description)
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
