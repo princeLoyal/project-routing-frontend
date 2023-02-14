@@ -2,9 +2,9 @@ import { Link, useSubmit } from 'react-router-dom';
 
 import classes from './EventItem.module.css';
 
-function EventItem({ event }) {
+function EventItem() {
   const submit = useSubmit();
-const eventy = {
+const event = {
 title: 'shhs',
 date: 'hshdh',
 description: 'jsjdj',
