@@ -97,7 +97,10 @@ export async function action({ request, params }) {
 
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
 
-  if (method === 'patch') {
+  if (method === 'PUT') {
+    const res = await fetch(url);
+    const resData = await res.json();
+    for(key of resData){};
 alert('hdhdh')
     const eventId = params.eventId;
     url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events' +eventId+ '.json';
