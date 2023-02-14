@@ -41,6 +41,7 @@ async function loadEvent(id) {
      return;
     }
   }
+  alert(url)
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -52,15 +53,8 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return {
-title: 'shhs',
-date: 'hshdh',
-description: 'jsjdj',
-id: 'hshs',
-image: 'jsjdj'
-};
+    return resData;
   }
-}
 
 async function loadEvents() {
   const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
