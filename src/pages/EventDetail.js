@@ -53,7 +53,14 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData;
+    return {
+title: 'hdhd',
+image: 'hshdhe',
+date: 'jdjjd',
+description: 'jdjdj',
+id: 'jdjdj', 
+
+};
   }
 }
 async function loadEvents() {
