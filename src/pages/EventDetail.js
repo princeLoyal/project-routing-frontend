@@ -32,11 +32,11 @@ function EventDetailPage() {
 export default EventDetailPage;
 
 async function loadEvent(id) {
-  var url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
+  let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
   const resp = await fetch(url);
   const respData = await resp.json();
   for(const key in respData){
-var url = key
+     url = key
     if(respData[key].id === id){
 alert(typeof url)     
 alert(url)
