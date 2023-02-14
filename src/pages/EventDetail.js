@@ -32,14 +32,15 @@ function EventDetailPage() {
 export default EventDetailPage;
 
 async function loadEvent(id) {
-  let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
+  var url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
   const resp = await fetch(url);
   const respData = await resp.json();
   for(const key in respData){
-const book = key
+var url = key
     if(respData[key].id === id){
-alert(typeof book)     
-alert(book)
+alert(typeof url)     
+alert(url)
+return;
     }
   }
   const response = await fetch(url);
