@@ -39,7 +39,6 @@ async function loadEvent(id) {
   for(const key in respData){
     if(respData[key].id === id){
      url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events/' +key+ '.json';
-     return;
     }
   }
   alert(url)
