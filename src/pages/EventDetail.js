@@ -43,7 +43,7 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-alert(resData.title)
+alert(resData.description)
     return resData;
   }
 }
