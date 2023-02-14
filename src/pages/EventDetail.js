@@ -34,9 +34,9 @@ export default EventDetailPage;
 async function loadEvent(id) {
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
   const res = await fetch(url);
-    const resData = await res.json();
-    for(const key in resData){
-      if(resData[key].id === eventId){
+    const resData1 = await res.json();
+    for(const key in resData1){
+      if(resData1[key].id === eventId){
         url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events' +key+ '.json';
       }
     };
