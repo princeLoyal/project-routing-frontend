@@ -99,7 +99,7 @@ export async function action({ request, params }) {
 
   if (method === 'patch') {
     const eventId = params.eventId;
-    url = 'http://localhost:8080/events/' + eventId;
+    url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events' +eventId+ '.json';
   }
 
   const response = await fetch(url, {
