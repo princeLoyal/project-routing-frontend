@@ -15,11 +15,11 @@ function EventDetailPage() {
 
   return (
     <>
-     // <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-       // <Await resolve={event}>
-       //   {(loadedEvent) => <EventItem event={loadedEvent} />}
-      //  </Await>
-     // </Suspense>
+      <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
+        <Await resolve={event}>
+          {(loadedEvent) => <EventItem event={loadedEvent} />}
+        </Await>
+      </Suspense>
       <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
         <Await resolve={events}>
           {(loadedEvents) => <EventsList events={loadedEvents} />}
@@ -54,12 +54,11 @@ async function loadEvent(id) {
   } else {
     const resData = await response.json();
     return {
-title: 'hdhd',
-image: 'hshdhe',
-date: 'jdjjd',
-description: 'jdjdj',
-id: 'jdjdj', 
-
+title: 'shhs',
+date: 'hshdh',
+description: 'jsjdj',
+id: 'hshs',
+image: 'jsjdj'
 };
   }
 }
