@@ -94,9 +94,10 @@ export async function action({ request, params }) {
     description: data.get('description'),
   };
 
-  let url = 'http://localhost:8080/events';
+  let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
 
   if (method === 'patch') {
+alert('hdhdh')
     const eventId = params.eventId;
     url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events' +eventId+ '.json';
   }
