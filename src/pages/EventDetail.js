@@ -32,7 +32,6 @@ function EventDetailPage() {
 export default EventDetailPage;
 
 async function loadEvent(id) {
-   alert('wvebt')
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
   const resp = await fetch(url);
   const respData = await resp.json();
