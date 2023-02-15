@@ -92,8 +92,18 @@ export async function loader({ request, params }) {
 
 export async function action({ params, request }) {
   const eventId = params.eventId;
-  const response = await fetch('http://localhost:8080/events/' + eventId, {
-    method: request.method,
+  let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
+    const res = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
+    const resData = await res.json();
+    for(const key in resData){
+      if(resData[key].id === eventId){
+        url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events/'+key+ '.json';
+      }
+    };
+
+  const response = await fetch(url, {
+    method: 'PUT',
+    body: JSON.stringify(null),
   });
 
   if (!response.ok) {
