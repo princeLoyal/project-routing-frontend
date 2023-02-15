@@ -1,8 +1,8 @@
-import AuthForm from '../components/AuthForm';
+//import AuthForm from '../components/AuthForm';
 import { json, redirect } from 'react-router-dom';
 
 function AuthenticationPage() {
-  return <AuthForm />;
+  return <div></div>;
 }
 
 export default AuthenticationPage;
