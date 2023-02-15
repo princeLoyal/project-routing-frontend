@@ -32,6 +32,7 @@ function EventDetailPage() {
 export default EventDetailPage;
 
 async function loadEvent(id) {
+   alert('wvebt')
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
   const resp = await fetch(url);
   const respData = await resp.json();
@@ -40,6 +41,7 @@ async function loadEvent(id) {
      url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events/' +key+ '.json';
     }
   }
+  alert(url)
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -51,7 +53,13 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData:
+    return {
+title: 'shhs',
+date: 'hshdh',
+description: 'jsjdj',
+id: 'hshs',
+image: 'jsjdj'
+};
   }
 }
 async function loadEvents() {
