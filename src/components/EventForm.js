@@ -103,7 +103,7 @@ export async function action({ request, params }) {
     const resData = await res.json();
     for(const key in resData){
       if(resData[key].id === eventId){
-        url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events'+key+ '.json';
+        url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events/'+key+ '.json';
       }
     };
   }
