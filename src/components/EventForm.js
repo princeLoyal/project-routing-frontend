@@ -86,14 +86,13 @@ export default EventForm;
 export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
-  let rand = Math.round(Math.random() * 100000);
-  alert(typeof rand +' '+ rand)
+  let id = Math.round(Math.random() * 100000);
   let eventData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
     description: data.get('description'),
-    id: data.get('date') + data.get('title') + data.get('description'),
+    id: id,
   };
 
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
