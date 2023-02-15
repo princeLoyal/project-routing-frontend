@@ -11,7 +11,7 @@ import EventDetailPage, {
 import NewEventPage from './pages/NewEvent';
 import { action as manipulateEventAction } from './components/EventForm';
 import EditEventPage from './pages/EditEvent';
-import AuthenticationPage from './pages/Authentication';
+import AuthenticationPage  from './pages/Authentication';
 
 const router = createBrowserRouter([
  {
