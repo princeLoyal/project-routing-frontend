@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       {
        path: 'new',
        element: <NewEventPage />,
-       action: manipulateEventAction,
+      // action: manipulateEventAction,
       },
      ],
     },
