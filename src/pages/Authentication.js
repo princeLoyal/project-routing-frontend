@@ -21,7 +21,7 @@ export const action = async({ request }) => {
     throw json({message: 'Unsupported mode'}, { status: 422});
   };
 
-  const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/' + mode, {
+  const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/user.json', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
