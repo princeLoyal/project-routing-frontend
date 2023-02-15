@@ -53,11 +53,11 @@ const router = createBrowserRouter([
       },
      ],
     },
-  //  {
-   //  path: 'auth', 
-    // element: <AuthenticationPage />,
-   //  action: authAction, 
-   // },
+    {
+     path: 'auth', 
+     element: <AuthenticationPage />,
+     action: authAction, 
+    },
   ],
  },
 ]);
