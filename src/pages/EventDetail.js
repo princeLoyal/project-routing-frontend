@@ -55,7 +55,6 @@ async function loadEvent(id) {
   }
 }
 async function loadEvents() {
-  alert('events')
   const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
 
   if (!response.ok) {
