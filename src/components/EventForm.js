@@ -86,7 +86,8 @@ export default EventForm;
 export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
-
+  let rand = Math.random() * 10;
+  alert(rand)
   let eventData = {
     title: data.get('title'),
     image: data.get('image'),
