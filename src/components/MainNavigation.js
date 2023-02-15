@@ -31,12 +31,12 @@ function MainNavigation() {
           </li>
           <li>
             <NavLink
-              to="/newsletter"
+              to="/auth"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
             >
-              Newsletter
+              Authentication 
             </NavLink>
           </li>
         </ul>
