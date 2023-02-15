@@ -87,7 +87,7 @@ export async function action({ request, params }) {
   const method = request.method;
   const data = await request.formData();
 
-  const eventData = {
+  let eventData = {
     title: data.get('title'),
     image: data.get('image'),
     date: data.get('date'),
@@ -97,7 +97,8 @@ export async function action({ request, params }) {
 
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
 
-  if (method === 'PUT') {
+  if (method === 'PUT' || method === 'delete') {
+alert('delete')
     const eventId = params.eventId;
     const res = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
     const resData = await res.json();
@@ -106,6 +107,10 @@ export async function action({ request, params }) {
         url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events/'+key+ '.json';
       }
     };
+  }
+  if(method === 'delete'){
+    eventData = null;
+    alert('delete')
   }
 
   const response = await fetch(url, {
