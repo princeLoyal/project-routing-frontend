@@ -97,8 +97,7 @@ export async function action({ request, params }) {
 
   let url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json';
 
-  if (method === 'PUT' || method === 'delete') {
-alert('delete')
+  if (method === 'PUT') {
     const eventId = params.eventId;
     const res = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/events.json');
     const resData = await res.json();
@@ -107,10 +106,6 @@ alert('delete')
         url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/events/'+key+ '.json';
       }
     };
-  }
-  if(method === 'delete'){
-    eventData = null;
-    alert('delete')
   }
 
   const response = await fetch(url, {
