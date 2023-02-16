@@ -16,8 +16,8 @@ export const action = async({ request }) => {
   const password = data.get('password');
   const url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/user.json'
   const authData = {
-    email: data.get('email'),
-    password: data.get('password'),
+    email: email,
+    password: password,
   };
 
   if(mode !== 'login' && mode !== 'signUp'){
