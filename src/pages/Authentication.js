@@ -23,6 +23,12 @@ export const action = async({ request }) => {
  if(mode === 'signUp'){
     response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/user.json');
     const users = response.json();
+    for(const key in users){
+      if(users[key].email === email){
+        alert('User already exist');
+        return;
+      }
+    };
     const authData = {
      email: email,
      password: password,
