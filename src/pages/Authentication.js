@@ -48,14 +48,14 @@ alert('reached')
   });
  }
 
-  if(response.status === 422 || response.status === 401){
-    return response;
-  };
+  //if(response.status === 422 || response.status === 401){
+   // return response;
+ // };
 
-  if(!response.ok){
-    throw json({message: 'Could not autenticate user'}, { status: 500});
-  };
+ // if(!response.ok){
+   // throw json({message: 'Could not autenticate user'}, { status: 500});
+ // };
 
-  return redirect('/');
+ // return redirect('/');
 
 };
