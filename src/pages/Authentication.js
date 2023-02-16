@@ -47,6 +47,7 @@ if(mode === 'login'){
    const users = await response.json();
    for(const key in users){
      if(users[key].email === email && users[key].password === password){
+alert(users[key].token)
        localStorage.setItem('userToken', users[key].token);
      }
    }
