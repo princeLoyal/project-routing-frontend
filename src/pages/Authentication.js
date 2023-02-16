@@ -14,7 +14,7 @@ export const action = async({ request }) => {
   const data = await request.formData();
   const email = data.get('email');
   const password = data.get('password');
-  const url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/user.json'
+  const url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/user.json';
   
   if(mode !== 'login' && mode !== 'signUp'){
     throw json({message: 'Unsupported mode'}, { status: 422});
@@ -31,9 +31,9 @@ export const action = async({ request }) => {
      },
      body: JSON.stringify(authData)
    });
-  } else if (mode === 'login'){
+  } //else if (mode === 'login'){
 
-  }
+//  }
   if(response.status === 422 || response.status === 401){
     return response;
   };
