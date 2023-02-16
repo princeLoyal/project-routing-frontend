@@ -43,7 +43,7 @@ export const action = async({ request }) => {
 if(mode === 'login'){
    const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
    const users = await response.json();
-   for(const key in res){
+   for(const key in users){
      if(users[key].email === email && users[key].password === password){
        alert('logged')
      }
