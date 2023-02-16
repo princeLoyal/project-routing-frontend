@@ -22,9 +22,8 @@ export const action = async({ request }) => {
     let response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
     const users = await response.json();
     for(const key in users){
-      alert(key)
       if(users[key].email === email){
-        alert('User already exist');
+        alert('User already exist. Log in');
         return redirect('/auth?mode=login');
       }
     };
@@ -42,12 +41,13 @@ export const action = async({ request }) => {
   });
  }
 if(mode === 'login'){
-const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
-const res = await response.json();
-for(const key in res){
-alert(res[key].email)
-}
-alert('end')
+   const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
+   const users = await response.json();
+   for(const key in res){
+     if(users[key].email === email && users[key].password === password){
+       alert('logged')
+     }
+   }
 }
 return null;
   //if(response.status === 422 || response.status === 401){
@@ -58,6 +58,6 @@ return null;
    // throw json({message: 'Could not autenticate user'}, { status: 500});
  // };
 
- // return redirect('/');
+  return redirect('/');
 
 };
