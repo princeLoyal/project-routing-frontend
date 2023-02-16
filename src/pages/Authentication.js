@@ -14,18 +14,19 @@ export const action = async({ request }) => {
   const data = await request.formData();
   const email = data.get('email');
   const password = data.get('password');
-  const url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/user.json'
+  const url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/users' +email+ '.json';
 
   if(mode !== 'login' && mode !== 'signUp'){
     throw json({message: 'Unsupported mode'}, { status: 422});
   };
  const response = '';
  if(mode === 'signUp'){
-    response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/user.json');
+    response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
     const users = response.json();
     for(const key in users){
       if(users[key].email === email){
         alert('User already exist');
+        redirect('auth');
         return;
       }
     };
