@@ -22,7 +22,7 @@ export const action = async({ request }) => {
 alert(mode)
  if(mode === 'signUp'){
 alert('response')
-    const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
+    let response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
     const users = response.json();
 alert('signup')
     for(const key in users){
