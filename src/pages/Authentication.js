@@ -25,7 +25,7 @@ export const action = async({ request }) => {
     for(const key in users){
       if(users[key].email === email){
         alert('User already exist. Log in');
-        return redirect('/auth?mode=login');
+        return redirect('/login?mode=login');
       }
     };
     const authData = {
@@ -52,7 +52,7 @@ if(mode === 'login'){
      }
    }
   alert('User not found. Create account.');
-  return redirect('/auth?mode=signUp');
+  return redirect('/login?mode=signUp');
 }
   //if(response.status === 422 || response.status === 401){
    // return response;
