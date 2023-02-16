@@ -47,6 +47,17 @@ alert('reached')
     body: JSON.stringify(authData)
   });
  }
+if(mode === 'login'){
+alert(mode)
+const response = await fetch(:https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json',{
+method: 'POST',
+body: JSON.stringify({
+email: 'ysusy',
+password: 'jdhdh'
+})
+});
+alert('end')
+}
 return null;
   //if(response.status === 422 || response.status === 401){
    // return response;
