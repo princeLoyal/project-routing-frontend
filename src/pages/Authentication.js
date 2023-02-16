@@ -41,18 +41,18 @@ export const action = async({ request }) => {
     },
     body: JSON.stringify(authData)
   });
+  localStorage.setItem('userToken', token);
  }
 if(mode === 'login'){
    const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
    const users = await response.json();
    for(const key in users){
      if(users[key].email === email && users[key].password === password){
-alert(users[key].token)
        localStorage.setItem('userToken', users[key].token);
      }
    }
-  let token1 = localStorage.getItem('userToken');
-alert(token1);
+  alert('User not found. Create account.');
+  return redirect('/auth?mode=signUp');
 }
   //if(response.status === 422 || response.status === 401){
    // return response;
