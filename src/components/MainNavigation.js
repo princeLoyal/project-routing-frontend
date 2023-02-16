@@ -32,12 +32,12 @@ function MainNavigation() {
           </li>
           <li>
             <NavLink
-              to=`${token? '/logout': '/auth'}`
+              to="/auth"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
             >
-              {token? 'Authentication' : 'Logout'}
+              Authentication 
             </NavLink>
           </li>
         </ul>
