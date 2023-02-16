@@ -19,8 +19,10 @@ export const action = async({ request }) => {
   if(mode !== 'login' && mode !== 'signUp'){
     throw json({message: 'Unsupported mode'}, { status: 422});
   };
+alert('start')
  const response = '';
  if(mode === 'signUp'){
+alert('signup')
     response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
     const users = response.json();
 
