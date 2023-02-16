@@ -14,32 +14,26 @@ export const action = async({ request }) => {
   const data = await request.formData();
   const email = data.get('email');
   const password = data.get('password');
-  const url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/users/' +email+ '.json';
 
   if(mode !== 'login' && mode !== 'signUp'){
     throw json({message: 'Unsupported mode'}, { status: 422});
   };
-alert(mode)
  if(mode === 'signUp'){
-alert('response')
     let response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
     const users = await response.json();
-alert('signup')
     for(const key in users){
       alert(key)
       if(users[key].email === email){
-alert(users[key].email)
         alert('User already exist');
-        return redirect('/auth');
+        return redirect('/auth?mode=login');
       }
     };
-alert('reached')
     const authData = {
      email: email,
      password: password,
     };
 
-    response = await fetch(url, {
+    response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
