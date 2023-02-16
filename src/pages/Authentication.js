@@ -20,9 +20,9 @@ export const action = async({ request }) => {
     throw json({message: 'Unsupported mode'}, { status: 422});
   };
 alert('start')
- let response = '';
  if(mode === 'signUp'){
-    response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
+alert('response')
+    const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
     const users = response.json();
 alert('signup')
     for(const key in users){
@@ -47,7 +47,7 @@ alert('reached')
     body: JSON.stringify(authData)
   });
  }
-
+return null;
   //if(response.status === 422 || response.status === 401){
    // return response;
  // };
