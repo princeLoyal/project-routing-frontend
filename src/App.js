@@ -14,7 +14,7 @@ import EditEventPage from './pages/EditEvent';
 import AuthenticationPage, { action as authAction } from './pages/Authentication';
 import Logout from './pages/Logout';
 
-const token = localStorage.getItem('userToken');
+//const token = localStorage.getItem('userToken');
 const router = createBrowserRouter([
  {
   path: '/',
