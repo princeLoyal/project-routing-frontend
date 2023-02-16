@@ -37,7 +37,7 @@ function MainNavigation() {
                 isActive ? classes.active : undefined
               }
             >
-              Authentication 
+              { token? 'Logout' : 'Log In' }
             </NavLink>
           </li>
         </ul>
