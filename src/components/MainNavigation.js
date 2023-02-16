@@ -4,6 +4,7 @@ import classes from './MainNavigation.module.css';
 import NewsletterSignup from './NewsletterSignup';
 
 function MainNavigation() {
+  const token = localStorage.getItem('userToken');
   return (
     <header className={classes.header}>
       <nav>
@@ -31,12 +32,12 @@ function MainNavigation() {
           </li>
           <li>
             <NavLink
-              to="/auth"
+              to=`${token? '/logout': '/auth'}`
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
             >
-              Authentication 
+              {token? Authentication : Logout}
             </NavLink>
           </li>
         </ul>
