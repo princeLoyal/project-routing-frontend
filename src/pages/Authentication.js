@@ -48,8 +48,7 @@ alert('reached')
   });
  }
 if(mode === 'login'){
-alert(mode)
-const response = await fetch(:https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json',{
+const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json',{
 method: 'POST',
 body: JSON.stringify({
 email: 'ysusy',
