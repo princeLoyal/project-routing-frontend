@@ -12,6 +12,9 @@ export const action = async({ request }) => {
   const mode = searchParams.get('mode') || 'login';
 
   const data = await request.formData();
+  const email = data.get('email');
+  const password = data.get('password');
+  const url = 'https://react-routing-eb51c-default-rtdb.firebaseio.com/user.json'
   const authData = {
     email: data.get('email'),
     password: data.get('password'),
@@ -21,7 +24,7 @@ export const action = async({ request }) => {
     throw json({message: 'Unsupported mode'}, { status: 422});
   };
 
-  const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/user.json', {
+  const response = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
