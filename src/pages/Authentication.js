@@ -20,7 +20,7 @@ export const action = async({ request }) => {
     throw json({message: 'Unsupported mode'}, { status: 422});
   };
 alert('start')
- const response = '';
+ let response = '';
  if(mode === 'signUp'){
     response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
     const users = response.json();
