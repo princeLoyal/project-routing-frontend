@@ -1,4 +1,4 @@
 const Logout = () => {
-  return localStorage.clearItem('userToken');
+  return localStorage.removeItem('userToken');
 };
 export default Logout;
