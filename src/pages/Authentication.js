@@ -23,7 +23,7 @@ alert(mode)
  if(mode === 'signUp'){
 alert('response')
     let response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
-    const users = response.json();
+    const users = await response.json();
 alert('signup')
     for(const key in users){
       alert(key)
@@ -48,13 +48,11 @@ alert('reached')
   });
  }
 if(mode === 'login'){
-const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json',{
-method: 'POST',
-body: JSON.stringify({
-email: 'ysusy',
-password: 'jdhdh'
-})
-});
+const response = await fetch('https://react-routing-eb51c-default-rtdb.firebaseio.com/users.json');
+const res = await response.json();
+for(const key in res){
+alert(res[key].email)
+}
 alert('end')
 }
 return null;
