@@ -27,7 +27,9 @@ alert('signup')
     const users = response.json();
 
     for(const key in users){
+      alert(key)
       if(users[key].email === email){
+alert(users[key].email)
         alert('User already exist');
         redirect('auth');
         return;
