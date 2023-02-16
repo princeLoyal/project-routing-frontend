@@ -14,7 +14,6 @@ import EditEventPage from './pages/EditEvent';
 import AuthenticationPage, { action as authAction } from './pages/Authentication';
 import Logout from './pages/Logout';
 
-//const token = localStorage.getItem('userToken');
 const router = createBrowserRouter([
  {
   path: '/',
@@ -60,6 +59,10 @@ const router = createBrowserRouter([
      element: <AuthenticationPage />,
      //element: {token? <Logout /> : <AuthenticationPage />},
      action: authAction, 
+    },
+    {
+     path: 'logout',
+     element: <Logout />,
     },
   ],
  },
