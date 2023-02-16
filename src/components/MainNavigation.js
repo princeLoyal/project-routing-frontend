@@ -32,7 +32,7 @@ function MainNavigation() {
           </li>
           <li>
             <NavLink
-              to='/login?mode=login'
+              to={token? 'logout' : '/login?mode=login'}
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
