@@ -49,6 +49,7 @@ if(mode === 'login'){
    for(const key in users){
      if(users[key].email === email && users[key].password === password){
        localStorage.setItem('userToken', users[key].token);
+       return redirect('/');
      }
    }
   alert('User not found. Create account.');
