@@ -1,4 +1,7 @@
+import { redirect } from 'react-router-dom';
+
 const Logout = () => {
-  return localStorage.removeItem('userToken');
+  localStorage.removeItem('userToken');
+  return redirect('/');
 };
 export default Logout;
