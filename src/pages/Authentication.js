@@ -23,7 +23,7 @@ export const action = async({ request }) => {
   if(mode !== 'login' && mode !== 'signUp'){
     throw json({message: 'Unsupported mode'}, { status: 422});
   };
-
+ if(mode === 'signUp'){};
   const response = await fetch(url, {
     method: 'POST',
     headers: {
