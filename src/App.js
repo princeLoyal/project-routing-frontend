@@ -14,9 +14,20 @@ import EditEventPage from './pages/EditEvent';
 import AuthenticationPage, { action as authAction } from './pages/Authentication';
 import { action as logoutAction } from './pages/Logout';
 
+function tokenLoader() {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    return null;
+  }
+  return token;
+}
+
 const router = createBrowserRouter([
  {
   path: '/',
+  loader: tokenLoader,
+  id: 'root', 
   element: <RootLayout />,
  // errorElement: <ErrorPage />,
   children: [
