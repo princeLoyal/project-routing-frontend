@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useRouteLoaderData } from 'react-router-dom';
 
 import classes from './MainNavigation.module.css';
 import NewsletterSignup from './NewsletterSignup';
 
 function MainNavigation() {
-  const token = localStorage.getItem('userToken');
+  const token = useRouteLoaderData('root');
   return (
     <header className={classes.header}>
       <nav>
@@ -30,16 +30,26 @@ function MainNavigation() {
               Events
             </NavLink>
           </li>
-          <li>
+          { !token? && <li>
             <NavLink
               to='/login?mode=login'
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
             >
-              { token? 'Logout' : 'Login' }
+              Login
             </NavLink>
-          </li>
+          </li> }
+          { token? && <li>
+            <NavLink
+              to='/logout'
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Logout
+            </NavLink>
+          </li> }
         </ul>
       </nav>
       <NewsletterSignup />
