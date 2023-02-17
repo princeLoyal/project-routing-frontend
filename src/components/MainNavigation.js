@@ -31,20 +31,10 @@ function MainNavigation() {
               Events
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/newsletter"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              Newsletter
-            </NavLink>
-          </li>
           {!token && (
             <li>
               <NavLink
-                to="/auth?mode=login"
+                to="/login?mode=login"
                 className={({ isActive }) =>
                   isActive ? classes.active : undefined
                 }
@@ -60,6 +50,16 @@ function MainNavigation() {
               </Form>
             </li>
           )}
+          <li>
+            <NavLink
+              to="/newsletter"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Newsletter
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <NewsletterSignup />
