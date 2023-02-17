@@ -15,7 +15,7 @@ import AuthenticationPage, { action as authAction } from './pages/Authentication
 import { action as logoutAction } from './pages/Logout';
 
 function tokenLoader() {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem('userToken');
 
   if (!token) {
     return null;
